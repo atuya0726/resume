@@ -1,0 +1,165 @@
+@page {
+  size: A4;
+  margin: 16mm 17mm 18mm;
+  @bottom-center {
+    content: counter(page);
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 9pt;
+    color: #777;
+  }
+}
+
+.document {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 10pt;
+  line-height: 1.75;
+  color: #202a27;
+  overflow-wrap: anywhere;
+  line-break: strict;
+}
+.document * { box-sizing: border-box; }
+.document h1, .document h2, .document h3, .document p { margin: 0; }
+.document-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 7mm; }
+.document-header h1 { font-size: 22pt; font-weight: 600; letter-spacing: .14em; }
+.document-header p { font-size: 9pt; color: #555; }
+.document-section { margin-top: 6mm; }
+.document h2 { font-size: 11pt; font-weight: 600; margin-bottom: 2.5mm; break-after: avoid; }
+.document h3 { font-size: 11pt; font-weight: 600; break-after: avoid; }
+.document table { width: 100%; border-collapse: collapse; font-size: 9pt; }
+.document th, .document td { border: .25mm solid #89938f; padding: 2.2mm 3mm; vertical-align: top; white-space: pre-wrap; }
+.document th { font-weight: 400; background: #f4f6f5; text-align: left; }
+.personal-info th { width: 28mm; }
+.personal-info .person-name { font-size: 19pt; font-weight: 600; letter-spacing: .1em; }
+.timeline td:first-child, .timeline th:first-child { width: 44mm; }
+.document thead { display: table-header-group; }
+.document tr { break-inside: avoid; }
+.text-box { border: .25mm solid #89938f; padding: 3mm; min-height: 13mm; white-space: pre-wrap; }
+.career-name { text-align: right; font-size: 13pt; font-weight: 600; }
+.career-document h2 { border-bottom: .35mm solid #344c43; padding-bottom: 1.5mm; }
+.multiline { white-space: pre-wrap; orphans: 3; widows: 3; }
+.skills { margin: 0; padding-left: 5mm; }
+.skills li { break-inside: avoid; }
+.job { margin-top: 5mm; }
+.job-heading { break-inside: avoid; break-after: avoid; }
+.job-heading p { color: #58645e; font-size: 9pt; }
+.job-role { font-weight: 600; margin: 1.5mm 0 2mm !important; break-after: avoid; }
+.career-target { margin-top: 3mm !important; }
+.company-details { font-size: 9pt; margin-top: 2mm; }
+.company-detail-empty { display: none; }
+.job-info { display: block; }
+.project-list { position: relative; margin-top: 3mm; padding-top: 7mm; }
+.career-project { margin-top: 4mm; padding: 3mm 0; border-top: .2mm solid #89938f; }
+.project-heading { break-inside: avoid; break-after: avoid; }
+.project-heading h4 { margin: 0; font-size: 10pt; font-weight: 600; }
+.project-heading > p { font-size: 9pt; color: #58645e; }
+.project-detail { margin-top: 2mm; }
+.project-detail h5 { margin: 0; font-size: 9pt; font-weight: 600; break-after: avoid; }
+.project-detail-empty { display: none; }
+.career-end { text-align: right; margin-top: 5mm !important; }
+
+/* Quiet hierarchy for the career document; long sections may span pages. */
+.career-document { color: #262e33; font-size: 10pt; line-height: 1.8; }
+.career-document .document-header { align-items: center; border-bottom: .5mm solid #364956; padding-bottom: 4mm; margin-bottom: 3mm; }
+.career-document .document-header h1 { font-size: 20pt; letter-spacing: .1em; }
+.career-document .document-header p { font-size: 8.5pt; color: #515f69; }
+.career-intro { display: flex; flex-direction: column; align-items: flex-end; gap: 1.5mm; margin-bottom: 5mm; }
+.career-document .career-name { font-size: 11pt; }
+.career-document .career-target { font-size: 9pt; color: #515f69; margin-top: 0 !important; }
+.career-document .document-section { margin-top: 7mm; }
+.career-document .document-section > h2 { position: relative; display: flex; align-items: baseline; gap: 3mm; background: #f1f3f4; border: 0; border-left: 1mm solid #465a68; padding: 2mm 3mm; margin-bottom: 3.5mm; font-size: 11pt; line-height: 1.6; color: #263a47; break-inside: avoid; break-after: avoid; }
+.section-number { font-size: 8pt; font-weight: 400; color: #637580; letter-spacing: .08em; }
+.career-document .career-prose { display: block; white-space: normal; line-height: 1.8; orphans: 3; widows: 3; }
+.career-prose > p { white-space: pre-line; margin: 0 0 2.8mm; orphans: 3; widows: 3; }
+.career-prose > p:last-child, .career-prose > ul:last-child { margin-bottom: 0; }
+.career-prose > h4 { margin: 4mm 0 1.8mm; font-size: 10pt; font-weight: 600; color: #344b5a; break-inside: avoid; break-after: avoid; }
+.career-prose > h4:first-child { margin-top: 0; }
+.career-prose ul { margin: 1mm 0 3mm; padding-left: 5mm; }
+.career-prose li { padding-left: .6mm; margin-bottom: .8mm; orphans: 2; widows: 2; }
+.career-prose li::marker { color: #5c6e78; }
+.career-summary .career-prose { padding: 0 1mm; }
+.career-document .job { margin-top: 4mm; padding: 2mm 3mm; border-left: .5mm solid #bbc4ca; }
+.career-document .job-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 5mm; }
+.career-document .job-heading h3 { font-size: 10.5pt; }
+.career-document .job-heading p { flex-shrink: 0; font-size: 8.5pt; color: #52616b; }
+.career-document .job-role { font-size: 9pt; font-weight: 400; color: #52616b; margin: .8mm 0 0 !important; }
+.career-document .company-details { font-size: 8.5pt; margin-top: 1.5mm; }
+.company-details:empty { display: none; }
+.career-document .company-details p { margin-top: .6mm; }
+.career-document .company-details span { display: inline-block; width: 22mm; color: #56636c; }
+.job-description { margin-top: 2.5mm; }
+.career-document .project-list { margin-top: 3mm; padding-top: 4mm; }
+.career-document .shared-projects { margin-top: 5mm; padding-top: 0; }
+.career-document .project-list-title { font-size: 9pt; font-weight: 600; color: #5b6871; margin: 0 0 2mm; }
+.career-document .career-project { border: 0; padding: 0; margin-top: 4mm; }
+.career-document .project-heading { background: #f6f7f8; border-top: .3mm solid #a9b5bd; border-bottom: .2mm solid #d5dce0; padding: 2.5mm 3mm; }
+.career-document .project-heading h4 { display: flex; align-items: baseline; gap: 2.5mm; font-size: 10.5pt; color: #2d414e; }
+.project-number { font-size: 8.5pt; font-weight: 400; color: #687e8b; }
+.career-document .project-heading > p { margin: 1mm 0 0 7mm; font-size: 8.5pt; color: #52616b; }
+.career-document .project-affiliations { margin: 2mm 1mm 0; font-size: 8.5pt; color: #52616b; }
+.career-document .project-detail { margin: 3mm 1mm 0; }
+.career-document .project-detail h5 { font-size: 9pt; color: #516773; margin: 0 0 1.4mm; }
+.career-document .project-specs { margin-top: 3mm; font-size: 8.5pt; line-height: 1.65; }
+.career-document .project-specs th, .career-document .project-specs td { border: 0; border-bottom: .2mm solid #d8dfe3; padding: 1.6mm 2.5mm; }
+.career-document .project-specs th { width: 42mm; background: #f6f7f8; color: #566873; font-weight: 400; }
+.career-document .timeline { font-size: 9pt; line-height: 1.6; }
+.career-document .timeline th, .career-document .timeline td { border: 0; border-bottom: .2mm solid #ccd5db; padding: 2.4mm 3mm; }
+.career-document .timeline th { background: #f5f6f7; color: #52616b; font-weight: 600; font-size: 8.5pt; }
+.career-document .timeline td:first-child, .career-document .timeline th:first-child { width: 32mm; color: #52616b; }
+.career-document .skill-list { display: block; list-style: none; padding: 0; }
+.career-document .skill-list li { display: inline-block; vertical-align: top; position: relative; width: 48%; padding-left: 4mm; break-inside: avoid; }
+.career-document .skill-list li::before { content: '•'; position: absolute; left: 1mm; color: #5c6e78; }
+.career-document .career-end { font-size: 9pt; color: #52616b; }
+
+/* doda simple A4 form: two pages, with continued history on the second. */
+@page resume-form {
+  size: A4;
+  margin: 15mm;
+  @bottom-center { content: none; }
+}
+.resume-document { page: resume-form; color: #000; font-size: 10pt; line-height: 1.45; }
+.resume-document .document-header { margin-bottom: 4mm; align-items: center; }
+.resume-document .document-header h1 { font-size: 21pt; font-weight: 400; letter-spacing: .35em; }
+.resume-document .document-header p { color: #000; font-size: 10pt; }
+.resume-document table { table-layout: fixed; font-size: 10pt; }
+.resume-document th, .resume-document td { border: .2mm solid #000; padding: 1.5mm 2.5mm; vertical-align: middle; background: white; }
+.resume-identity { display: flex; align-items: flex-start; gap: 8mm; break-inside: avoid; }
+.resume-document .resume-personal { flex: 1; width: calc(100% - 38mm); }
+.resume-personal .resume-gender-column { width: 24mm; }
+.resume-personal .resume-kana { height: 8mm; }
+.resume-personal .resume-kana td { border-bottom-style: dashed; }
+.resume-personal .resume-name { height: 22mm; }
+.resume-personal .resume-name td { vertical-align: top; border-top: none; }
+.resume-personal .resume-name td > div { font-size: 20pt; letter-spacing: .08em; padding-top: 1mm; }
+.resume-personal .resume-birthday { height: 11mm; font-size: 9pt; }
+.resume-field-label { display: block; font-size: 9pt; margin-bottom: 1mm; }
+.resume-inline-label { font-size: 9pt; margin-right: 3mm; }
+.resume-photo { width: 30mm; height: 40mm; flex: 0 0 30mm; border: .2mm dashed #666; display: flex; flex-direction: column; gap: 2mm; align-items: center; justify-content: center; font-size: 8pt; color: #555; position: relative; overflow: hidden; cursor: pointer; }
+.resume-photo.has-photo { border: 0; display: block; }
+.resume-photo img { position: absolute; max-width: none; max-height: none; display: block; }
+.resume-contact { margin-top: 3mm; break-inside: avoid; }
+.resume-contact .resume-contact-column { width: 48mm; }
+.resume-contact .resume-address-kana { height: 7mm; font-size: 9pt; }
+.resume-contact .resume-address-kana > td:first-child { border-bottom-style: dashed; }
+.resume-contact .resume-address { height: 17mm; }
+.resume-contact .resume-address > td { border-top: none; vertical-align: top; }
+.resume-contact-hint { font-size: 7pt; margin-left: 1mm; }
+.resume-document .resume-contact-methods { padding: 0; vertical-align: top; }
+.resume-contact-methods > div { padding: 1.5mm 2.5mm; min-height: 12mm; }
+.resume-contact-methods > div + div { border-top: .2mm dashed #000; }
+.resume-history { margin-top: 5mm; }
+.resume-timeline .resume-year { width: 20mm; }
+.resume-timeline .resume-month { width: 12mm; }
+.resume-timeline th { text-align: center; height: 8mm; }
+.resume-timeline td { height: 8.5mm; }
+.resume-timeline td:nth-child(1), .resume-timeline td:nth-child(2) { text-align: center; }
+.resume-timeline td:last-child { text-align: left; }
+.resume-timeline .resume-period { font-size: 8pt; }
+.resume-timeline .resume-group td:last-child { text-align: center; }
+.resume-timeline .resume-end td:last-child { text-align: right; }
+.resume-second-page { break-before: page; }
+.resume-qualifications { margin-top: 5mm; }
+.resume-entry { margin-top: 5mm; border: .2mm solid #000; }
+.resume-entry h2 { font-size: 10pt; font-weight: 400; padding: 2mm 2.5mm 0; margin: 0; break-after: avoid; }
+.resume-entry h2 span { display: block; font-size: 8pt; margin-top: 1mm; }
+.resume-entry > div { padding: 3mm 2.5mm; white-space: pre-wrap; orphans: 3; widows: 3; }
+.resume-notes > div { min-height: 49mm; }

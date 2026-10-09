@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.work/
+.env
+.env.*
+private/
+# Local documents and assets may contain personal data.
+/public/
+*.private.json
+*.pdf
+.DS_Store
